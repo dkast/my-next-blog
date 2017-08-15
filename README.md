@@ -1,3 +1,3 @@
-# Next.js Blog Experiment
+Next.js Blog Experiment
 ---
 Learn Next.js creating a Blog

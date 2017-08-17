@@ -1,6 +1,7 @@
-import Layout from "../components/MyLayout";
+import Layout from "../components/layout";
 import Link from "next/link";
 import fetch from "isomorphic-unfetch";
+import { createClient } from "contentful";
 
 const Index = props =>
   <Layout>
@@ -19,13 +20,29 @@ const Index = props =>
   </Layout>;
 
 Index.getInitialProps = async function() {
-  const res = await fetch("https://api.tvmaze.com/search/shows?q=batman");
-  const data = await res.json();
+  // const res = await fetch("https://api.tvmaze.com/search/shows?q=batman");
+  // const data = await res.json();
+  //
+  // console.log(`Show data fetched. Count: ${data.length}`);
+  //
+  // return {
+  //   shows: data
+  // };
+  const client = createClient({
+    space: "vetv236gz0vr",
+    accessToken:
+      "bacf758fc3542068ab2ddff0188403327800751d61f9150b6991f5bb94c7cab9"
+  });
 
-  console.log(`Show data fetched. Count: ${data.length}`);
+  const res = await client.getEntries({
+    content_type: "blogPost",
+    limit: 10
+  });
+
+  console.dir(res);
 
   return {
-    shows: data
+    posts: res
   };
 };
 

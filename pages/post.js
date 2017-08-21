@@ -1,25 +1,33 @@
 import Layout from "../components/layout";
 import fetch from "isomorphic-unfetch";
+import { createClient } from "contentful";
 
 const Post = props =>
   <Layout>
     <h1>
-      {props.show.name}
+      {props.post.fields.title}
     </h1>
     <p>
-      {props.show.summary.replace(/<[/]?p>/g, "")}
+      {props.post.fields.body.replace(/<[/]?p>/g, "")}
     </p>
-    <img src={props.show.image.medium} />
   </Layout>;
 
 Post.getInitialProps = async function(context) {
   const { id } = context.query;
-  const res = await fetch(`https://api.tvmaze.com/shows/${id}`);
-  const show = await res.json();
+  const client = createClient({
+    space: "vetv236gz0vr",
+    accessToken:
+      "bacf758fc3542068ab2ddff0188403327800751d61f9150b6991f5bb94c7cab9"
+  });
 
-  console.log(`Fetched show: ${show.name}`);
-
-  return { show };
+  const res = await client.getEntries({
+    content_type: "blogPost",
+    "fields.slug": id
+  });
+  console.dir(res);
+  return {
+    post: res.items[0]
+  };
 };
 
 export default Post;

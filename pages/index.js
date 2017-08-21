@@ -1,17 +1,17 @@
 import Layout from "../components/layout";
-import Link from "next/link";
+import { Link } from "../routes";
 import fetch from "isomorphic-unfetch";
 import { createClient } from "contentful";
 
 const Index = props =>
   <Layout>
-    <h1>Batman TV Shows</h1>
+    <h1>Posts</h1>
     <ul>
-      {props.shows.map(({ show }) =>
-        <li key={show.id}>
-          <Link as={`/p/${show.id}`} href={`/post?id=${show.id}`}>
+      {props.posts.map(post =>
+        <li key={post.sys.id}>
+          <Link route="post" params={{ slug: post.fields.slug }}>
             <a>
-              {show.name}
+              {post.fields.title}
             </a>
           </Link>
         </li>
@@ -20,14 +20,6 @@ const Index = props =>
   </Layout>;
 
 Index.getInitialProps = async function() {
-  // const res = await fetch("https://api.tvmaze.com/search/shows?q=batman");
-  // const data = await res.json();
-  //
-  // console.log(`Show data fetched. Count: ${data.length}`);
-  //
-  // return {
-  //   shows: data
-  // };
   const client = createClient({
     space: "vetv236gz0vr",
     accessToken:
@@ -39,10 +31,8 @@ Index.getInitialProps = async function() {
     limit: 10
   });
 
-  console.dir(res);
-
   return {
-    posts: res
+    posts: res.items
   };
 };
 

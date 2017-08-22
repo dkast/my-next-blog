@@ -1,5 +1,6 @@
 import Header from "./header";
 import Head from "next/head";
+import Logo from "./logo";
 
 const Layout = props =>
   <div>
@@ -14,7 +15,10 @@ const Layout = props =>
       />
     </Head>
     <Header />
-    {props.children}
+    <Logo />
+    <div>
+      {props.children}
+    </div>
   </div>;
 
 export default Layout;

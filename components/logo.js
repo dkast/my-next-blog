@@ -1,12 +1,12 @@
 export default () =>
   <svg
     id="svg-icon"
-    width="297px"
+    width="197px"
     height="93px"
     viewBox="0 0 297 93"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
-    enable-background="new 0 0 100 100"
+    enableBackground="new 0 0 100 100"
   >
     <title>hacknroll_header</title>
     <description>

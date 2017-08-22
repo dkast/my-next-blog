@@ -15,8 +15,14 @@ const Layout = props =>
       />
     </Head>
     <Header />
-    <Logo />
-    <div>
+    <div className="container">
+      <div className="row">
+        <div className="col-12">
+          <div className="text-center">
+            <Logo />
+          </div>
+        </div>
+      </div>
       {props.children}
     </div>
   </div>;

@@ -1,22 +1,12 @@
-import Layout from "../components/layout";
-import { Link } from "../routes";
-import fetch from "isomorphic-unfetch";
 import { createClient } from "contentful";
+import fetch from "isomorphic-unfetch";
+
+import Layout from "../components/layout";
+import Post from "../components/post";
 
 const Index = props =>
   <Layout>
-    <h1>Posts</h1>
-    <ul>
-      {props.posts.map(post =>
-        <li key={post.sys.id}>
-          <Link route="post" params={{ slug: post.fields.slug }}>
-            <a>
-              {post.fields.title}
-            </a>
-          </Link>
-        </li>
-      )}
-    </ul>
+    {props.posts.map(post => <Post key={post.sys.id} post={post} />)}
   </Layout>;
 
 Index.getInitialProps = async function() {

@@ -1,5 +1,6 @@
-import Header from "./header";
 import Head from "next/head";
+import Link from "next/link";
+import Header from "./header";
 import Logo from "./logo";
 
 const Layout = props =>
@@ -18,13 +19,17 @@ const Layout = props =>
     <div className="container">
       <div className="row">
         <div className="col-12">
-          <div className="text-center">
-            <Logo />
+          <div className="text-center mb-5">
+            <Link href="/">
+              <a>
+                <Logo />
+              </a>
+            </Link>
           </div>
         </div>
       </div>
       <div className="row justify-content-md-center">
-        <div className="col-lg-6">
+        <div className="col-lg-8">
           {props.children}
         </div>
       </div>

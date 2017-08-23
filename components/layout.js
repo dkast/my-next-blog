@@ -23,7 +23,11 @@ const Layout = props =>
           </div>
         </div>
       </div>
-      {props.children}
+      <div className="row justify-content-md-center">
+        <div className="col-lg-6">
+          {props.children}
+        </div>
+      </div>
     </div>
   </div>;
 

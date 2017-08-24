@@ -18,7 +18,8 @@ Index.getInitialProps = async function() {
 
   const res = await client.getEntries({
     content_type: "blogPost",
-    limit: 10
+    limit: 10,
+    order: "-sys.createdAt"
   });
 
   return {

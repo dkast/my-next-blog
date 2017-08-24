@@ -1,7 +1,7 @@
 export default () =>
   <svg
     id="svg-icon"
-    width="197px"
+    width="200px"
     height="93px"
     viewBox="0 0 297 93"
     version="1.1"

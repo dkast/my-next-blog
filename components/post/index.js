@@ -33,10 +33,10 @@ class PostItem extends Component {
               text-decoration: none;
             }
 
-            .post-body p {
+            /* use :global to style third-party components */
+            :global(.post-body) {
               font-size: 18px;
               line-height: 1.5;
-              color: red;
             }
 
             .post-date {
@@ -51,39 +51,3 @@ class PostItem extends Component {
 }
 
 export default PostItem;
-//
-// const PostItem = ({ post }) =>
-//   <div>
-//     <Link route="post" params={{ slug: post.fields.slug }}>
-//       <a>
-//         <h2 className="mb-4">
-//           {post.fields.title}
-//         </h2>
-//       </a>
-//     </Link>
-//     <small>
-//       {post.sys.createdAt}
-//     </small>
-//     <p>
-//       {post.fields.body.replace(/<[/]?p>/g, "")}
-//     </p>
-//     <style jsx>
-//       {`
-//         a {
-//           color: #333;
-//         }
-//
-//         a:hover {
-//           color: #ff2d55;
-//           text-decoration: none;
-//         }
-//
-//         p {
-//           font-size: 16px;
-//           line-height: 1.5;
-//         }
-//       `}
-//     </style>
-//   </div>;
-//
-// export default PostItem;

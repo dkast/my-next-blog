@@ -1,7 +1,7 @@
 import { Link } from "../../routes";
 import moment from "moment/moment";
-
 import React, { Component } from "react";
+import ReactMarkdown from "react-markdown";
 
 class PostItem extends Component {
   render() {
@@ -15,12 +15,13 @@ class PostItem extends Component {
             </h2>
           </a>
         </Link>
-        <span className="badge badge-dark mb-4 post-date">
+        <span className="badge badge-light mb-4 post-date">
           {postDate.fromNow()}
         </span>
-        <p>
-          {this.props.post.fields.body}
-        </p>
+        <ReactMarkdown
+          source={this.props.post.fields.body}
+          className="post-body mb-5"
+        />
         <style jsx>
           {`
             a {
@@ -32,9 +33,10 @@ class PostItem extends Component {
               text-decoration: none;
             }
 
-            p {
-              font-size: 16px;
+            .post-body p {
+              font-size: 18px;
               line-height: 1.5;
+              color: red;
             }
 
             .post-date {

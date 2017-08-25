@@ -13,7 +13,7 @@ const Post = props =>
   </Layout>;
 
 Post.getInitialProps = async function(context) {
-  const { id } = context.query;
+  const { slug } = context.query;
   const client = createClient({
     space: "vetv236gz0vr",
     accessToken:
@@ -22,7 +22,7 @@ Post.getInitialProps = async function(context) {
 
   const res = await client.getEntries({
     content_type: "blogPost",
-    "fields.slug": id
+    "fields.slug": slug
   });
   console.dir(res);
   return {

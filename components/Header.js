@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "../routes";
 
 const Header = () =>
   <div className="container my-3">
@@ -6,7 +6,7 @@ const Header = () =>
       <div className="col col-lg-10">
         <ul className="nav justify-content-end">
           <li className="nav-item">
-            <Link href="/about">
+            <Link route="about">
               <a className="nav-link">About</a>
             </Link>
           </li>

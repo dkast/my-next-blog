@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Link from "next/link";
+import { Link } from "../routes";
 import Header from "./header";
 import Logo from "./logo";
 
@@ -22,7 +22,7 @@ const Layout = props =>
       <div className="row">
         <div className="col-12">
           <div className="text-center mb-5 site-title">
-            <Link href="/">
+            <Link route="index">
               <a>
                 <Logo />
                 <h3>Hack n´ Roll</h3>

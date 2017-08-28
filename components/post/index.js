@@ -35,8 +35,14 @@ class PostItem extends Component {
 
             /* use :global to style third-party components */
             :global(.post-body) {
-              font-size: 18px;
-              line-height: 1.5;
+              font-size: 20px;
+              font-weight: 300;
+              line-height: 1.6;
+            }
+
+            :global(.post-body h2, .post-body h3, .post-body h4) {
+              font-family: 'Open Sans', sans-serif;
+              font-weight: 700;
             }
 
             .post-date {

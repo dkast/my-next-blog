@@ -1,27 +1,14 @@
-import Head from "next/head";
 import Link from "next/link";
 import Header from "./header";
 import Logo from "./logo";
 
 const Layout = props =>
   <div>
-    <Head>
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta charSet="utf-8" />
-      <link
-        rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
-      />
-      <link
-        href="https://fonts.googleapis.com/css?family=Encode+Sans:700|Hind:400,600|Open+Sans:700"
-        rel="stylesheet"
-      />
-    </Head>
     <Header />
     <div className="container">
       <div className="row">
-        <div className="col-12">
-          <div className="text-center mb-5 site-title">
+        <div className="col-12 mb-5">
+          <div className="text-center site-title">
             <Link href="/">
               <a>
                 <Logo />
@@ -29,6 +16,7 @@ const Layout = props =>
               </a>
             </Link>
           </div>
+          <p className="text-center text-muted">by Daniel Castillejo</p>
         </div>
       </div>
       <div className="row justify-content-md-center mt-5">
@@ -37,22 +25,6 @@ const Layout = props =>
         </div>
       </div>
     </div>
-    <style jsx global>
-      {`
-        body {
-          font-family: 'Hind', sans-serif;
-        }
-
-        h1,
-        h2,
-        h3,
-        h5,
-        h5 {
-          font-family: 'Open Sans', sans-serif;
-          font-weight: 700;
-        }
-      `}
-    </style>
     <style jsx>
       {`
         .site-title {

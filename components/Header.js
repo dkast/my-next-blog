@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-import Link from "next/link";
+import { Link } from "../routes";
 import Head from "next/head";
 import { Twitter, Instagram, Github } from "react-feather";
 
@@ -38,7 +37,7 @@ const Header = () =>
         <div className="col-4">
           <ul className="nav">
             <li className="nav-item">
-              <Link href="/about">
+              <Link route="about">
                 <a className="nav-link">About</a>
               </Link>
             </li>
@@ -63,21 +62,6 @@ const Header = () =>
             </li>
           </ul>
         </div>
-=======
-import { Link } from "../routes";
-
-const Header = () =>
-  <div className="container my-3">
-    <div className="row justify-content-md-center">
-      <div className="col col-lg-10">
-        <ul className="nav justify-content-end">
-          <li className="nav-item">
-            <Link route="about">
-              <a className="nav-link">About</a>
-            </Link>
-          </li>
-        </ul>
->>>>>>> 099c87ea1e05dd237147859eced037997da47672
       </div>
     </div>
   </div>;

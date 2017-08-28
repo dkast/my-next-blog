@@ -8,8 +8,8 @@ const Layout = props =>
     <Header />
     <div className="container">
       <div className="row">
-        <div className="col-12">
-          <div className="text-center mb-5 site-title">
+        <div className="col-12 mb-5">
+          <div className="text-center site-title">
             <Link route="index">
               <a>
                 <Logo />

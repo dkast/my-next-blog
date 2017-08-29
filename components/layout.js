@@ -3,7 +3,7 @@ import Header from "./header";
 import Logo from "./logo";
 import { Link } from "../routes";
 
-const Layout = props =>
+const Layout = ({ children }) =>
   <div>
     <Header />
     <div className="container">
@@ -22,7 +22,7 @@ const Layout = props =>
       </div>
       <div className="row justify-content-md-center mt-5">
         <div className="col-lg-8">
-          {props.children}
+          {children}
         </div>
       </div>
     </div>

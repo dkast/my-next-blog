@@ -8,7 +8,7 @@ Router.onRouteChangeStart = () => NProgress.start();
 Router.onRouteChangeComplete = () => NProgress.done();
 Router.onRouteChangeError = () => NProgress.done();
 
-const Header = () =>
+const Header = ({ title = "Hack n' Roll" }) =>
   <div>
     <Head>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -21,6 +21,9 @@ const Header = () =>
         href="https://fonts.googleapis.com/css?family=Encode+Sans:700|Hind:300,400,600|Open+Sans:700"
         rel="stylesheet"
       />
+      <title>
+        {title}
+      </title>
     </Head>
     <style jsx global>
       {`

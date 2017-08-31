@@ -8,7 +8,7 @@ Router.onRouteChangeStart = () => NProgress.start();
 Router.onRouteChangeComplete = () => NProgress.done();
 Router.onRouteChangeError = () => NProgress.done();
 
-const Header = ({ title = "Hack n' Roll" }) =>
+const Header = ({ title = "Hack n' Roll" }) => (
   <div>
     <Head>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -21,14 +21,18 @@ const Header = ({ title = "Hack n' Roll" }) =>
         href="https://fonts.googleapis.com/css?family=Encode+Sans:700|Hind:300,400,600|Open+Sans:700"
         rel="stylesheet"
       />
-      <title>
-        {title}
-      </title>
+      <title>{title}</title>
     </Head>
     <style jsx global>
       {`
+        html {
+          position: relative;
+          min-height: 100%;
+        }
+
         body {
-          font-family: 'Hind', sans-serif;
+          font-family: "Hind", sans-serif;
+          margin-bottom: 60px;
         }
 
         h1,
@@ -36,7 +40,7 @@ const Header = ({ title = "Hack n' Roll" }) =>
         h3,
         h5,
         h5 {
-          font-family: 'Open Sans', sans-serif;
+          font-family: "Open Sans", sans-serif;
           font-weight: 700;
         }
 
@@ -60,7 +64,7 @@ const Header = ({ title = "Hack n' Roll" }) =>
           width: 100px;
           height: 100%;
           box-shadow: 0 0 10px #26d0ce, 0 0 5px #26d0ce;
-          opacity: 1.0;
+          opacity: 1;
           transform: rotate(3deg) translate(0px, -4px);
         }
       `}
@@ -97,6 +101,7 @@ const Header = ({ title = "Hack n' Roll" }) =>
         </div>
       </div>
     </div>
-  </div>;
+  </div>
+);
 
 export default Header;

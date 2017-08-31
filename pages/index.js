@@ -11,9 +11,8 @@ const Index = props =>
 
 Index.getInitialProps = async function() {
   const client = createClient({
-    space: "vetv236gz0vr",
-    accessToken:
-      "bacf758fc3542068ab2ddff0188403327800751d61f9150b6991f5bb94c7cab9"
+    space: process.env.SPACE_ID,
+    accessToken: process.env.ACCESS_TOKEN
   });
 
   const res = await client.getEntries({

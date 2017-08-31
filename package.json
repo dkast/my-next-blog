@@ -9,11 +9,12 @@
     "build": "next build",
     "start": "NODE_ENV=production node server"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["nextjs", "react", "SSR"],
+  "author": "Daniel Castillejo",
   "license": "ISC",
   "dependencies": {
     "contentful": "^4.6.0",
+    "dotenv": "^4.0.0",
     "express": "^4.15.4",
     "isomorphic-unfetch": "^2.0.0",
     "moment": "^2.18.1",

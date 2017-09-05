@@ -1,4 +1,4 @@
-export default () =>
+export default () => (
   <svg
     id="svg-icon"
     width="200px"
@@ -50,4 +50,5 @@ export default () =>
         </g>
       </g>
     </g>
-  </svg>;
+  </svg>
+);

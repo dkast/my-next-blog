@@ -28,11 +28,6 @@ const Layout = ({ children }) => (
     <Footer />
     <style jsx>
       {`
-        .site-title {
-          font-family: "Encode Sans", sans-serif;
-          text-transform: uppercase;
-        }
-
         a,
         a:hover {
           color: #333;

@@ -44,11 +44,6 @@ const Header = ({ title = "Hack n' Roll" }) => (
           font-weight: 700;
         }
 
-        .site-title {
-          font-family: "Encode Sans", sans-serif;
-          text-transform: uppercase;
-        }
-
         /* loading progress bar styles */
         #nprogress {
           pointer-events: none;

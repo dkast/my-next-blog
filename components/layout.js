@@ -14,7 +14,7 @@ const Layout = ({ children }) => (
             <Link route="index">
               <a>
                 <Logo />
-                <h3>Hack n´ Roll</h3>
+                <h3>Hack n' Roll</h3>
               </a>
             </Link>
           </div>
@@ -28,6 +28,11 @@ const Layout = ({ children }) => (
     <Footer />
     <style jsx>
       {`
+        .site-title h3 {
+          font-family: "Encode Sans", sans-serif;
+          /*text-transform: uppercase;*/
+        }
+
         a,
         a:hover {
           color: #333;

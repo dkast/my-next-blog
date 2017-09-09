@@ -9,6 +9,10 @@
     "build": "next build",
     "start": "NODE_ENV=production node server"
   },
+  "now": {
+    "alias": "hacknroll",
+    "dotenv": true
+  },
   "keywords": ["nextjs", "react", "SSR"],
   "author": "Daniel Castillejo",
   "license": "ISC",

@@ -8,7 +8,7 @@ Router.onRouteChangeStart = () => NProgress.start();
 Router.onRouteChangeComplete = () => NProgress.done();
 Router.onRouteChangeError = () => NProgress.done();
 
-const Header = ({ title = "Hack n' Roll" }) => (
+const Header = ({ title = "Random Access" }) => (
   <div>
     <Head>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -18,7 +18,7 @@ const Header = ({ title = "Hack n' Roll" }) => (
         href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
       />
       <link
-        href="https://fonts.googleapis.com/css?family=Encode+Sans:700|Hind:300,400,600|Open+Sans:700"
+        href="https://fonts.googleapis.com/css?family=Works+Sans:500:700|Hind:300,400,600"
         rel="stylesheet"
       />
       <title>{title}</title>
@@ -40,7 +40,7 @@ const Header = ({ title = "Hack n' Roll" }) => (
         h3,
         h5,
         h5 {
-          font-family: "Open Sans", sans-serif;
+          font-family: "Works Sans", sans-serif;
           font-weight: 700;
         }
 

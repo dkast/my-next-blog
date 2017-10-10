@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Header from "./header";
-import Logo from "./logo";
+import Logo from "./logo-ra";
 import Footer from "./footer";
 import { Link } from "../routes";
 
@@ -14,7 +14,7 @@ const Layout = ({ children }) => (
             <Link route="index">
               <a>
                 <Logo />
-                <h3>Hack n' Roll</h3>
+                <h3 className="mt-4">Random Access</h3>
               </a>
             </Link>
           </div>
@@ -29,8 +29,9 @@ const Layout = ({ children }) => (
     <style jsx>
       {`
         .site-title h3 {
-          font-family: "Encode Sans", sans-serif;
-          /*text-transform: uppercase;*/
+          font-family: "Works Sans", sans-serif;
+          text-transform: uppercase;
+          letter-spacing: 4px;
         }
 
         a,

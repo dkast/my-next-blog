@@ -13,7 +13,11 @@
     "alias": "hacknroll",
     "dotenv": true
   },
-  "keywords": ["nextjs", "react", "SSR"],
+  "keywords": [
+    "nextjs",
+    "react",
+    "SSR"
+  ],
   "author": "Daniel Castillejo",
   "license": "ISC",
   "dependencies": {
@@ -22,11 +26,11 @@
     "express": "^4.15.4",
     "isomorphic-unfetch": "^2.0.0",
     "moment": "^2.18.1",
-    "next": "^3.0.3",
+    "next": "^4.0.1",
     "next-routes": "^1.0.40",
     "nprogress": "^0.2.0",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "react-feather": "^1.0.7",
     "react-markdown": "^2.5.0"
   }

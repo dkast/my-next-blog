@@ -49,7 +49,7 @@ const Header = ({ title = "Random Access" }) => (
           pointer-events: none;
         }
         #nprogress .bar {
-          background: #26d0ce;
+          background: #333;
           position: fixed;
           z-index: 1031;
           top: 0;
@@ -63,7 +63,7 @@ const Header = ({ title = "Random Access" }) => (
           right: 0px;
           width: 100px;
           height: 100%;
-          box-shadow: 0 0 10px #26d0ce, 0 0 5px #26d0ce;
+          box-shadow: 0 0 10px #333, 0 0 5px #333;
           opacity: 1;
           transform: rotate(3deg) translate(0px, -4px);
         }

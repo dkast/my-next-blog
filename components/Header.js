@@ -71,7 +71,7 @@ const Header = ({ title = "Random Access" }) => (
     </style>
     <div className="container my-3">
       <div className="row justify-content-around">
-        <div className="col-4">
+        <div className="col-4 col-md-4">
           <ul className="nav">
             <li className="nav-item">
               <Link route="about">
@@ -80,7 +80,7 @@ const Header = ({ title = "Random Access" }) => (
             </li>
           </ul>
         </div>
-        <div className="col-4">
+        <div className="col-8 col-md-4">
           <ul className="nav justify-content-end">
             <li className="nav-item">
               <a href="https://twitter.com/dkast" className="nav-link">

@@ -3,7 +3,7 @@ export default () => (
     <div className="container">
       <div className="col text-center">
         <span className="text-muted">
-          Created by Daniel Castillejo. Built with Next.js and Contentful.
+          Created by Daniel Castillejo. Built with Next.js.
         </span>
       </div>
     </div>

@@ -4,10 +4,31 @@ import fetch from "isomorphic-unfetch";
 import Layout from "../components/layout";
 import Post from "../components/post";
 
-const Index = props =>
+const Index = props => (
   <Layout>
+    <style jsx>
+      {`
+        .intro h1 {
+          font-weight: 400;
+        }
+
+        .intro h2 {
+          font-weight: 300;
+        }
+      `}
+    </style>
+    <div className="row">
+      <div className="col-12 intro">
+        <h1>Hello, I'm Daniel Castillejo.</h1>
+        <h2 className="mb-5">
+          Software developer, design enthusiast and music lover.
+        </h2>
+        <h2 className="mb-4 text-muted">This is my Blog.</h2>
+      </div>
+    </div>
     {props.posts.map(post => <Post key={post.sys.id} post={post} />)}
-  </Layout>;
+  </Layout>
+);
 
 Index.getInitialProps = async function() {
   const client = createClient({

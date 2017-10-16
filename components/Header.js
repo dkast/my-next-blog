@@ -3,12 +3,13 @@ import NProgress from "nprogress";
 import Router from "next/router";
 import { Link } from "../routes";
 import { Twitter, Instagram, Github } from "react-feather";
+import Logo from "./logo-ra";
 
 Router.onRouteChangeStart = () => NProgress.start();
 Router.onRouteChangeComplete = () => NProgress.done();
 Router.onRouteChangeError = () => NProgress.done();
 
-const Header = ({ title = "Random Access" }) => (
+const Header = ({ title = "Daniel Castillejo" }) => (
   <div>
     <Head>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -18,7 +19,7 @@ const Header = ({ title = "Random Access" }) => (
         href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
       />
       <link
-        href="https://fonts.googleapis.com/css?family=Works+Sans:500:700|Hind:300,400,600"
+        href="https://fonts.googleapis.com/css?family=Hind:300,400,600"
         rel="stylesheet"
       />
       <title>{title}</title>
@@ -40,7 +41,6 @@ const Header = ({ title = "Random Access" }) => (
         h3,
         h5,
         h5 {
-          font-family: "Works Sans", sans-serif;
           font-weight: 700;
         }
 
@@ -69,41 +69,43 @@ const Header = ({ title = "Random Access" }) => (
         }
       `}
     </style>
-    <div className="container my-3">
-      <div className="row justify-content-around">
-        <div className="col-4 col-md-4">
-          <ul className="nav">
-            <li className="nav-item">
-              <Link route="about">
-                <a className="nav-link">About</a>
-              </Link>
-            </li>
-          </ul>
-        </div>
-        <div className="col-8 col-md-4">
-          <ul className="nav justify-content-end">
-            <li className="nav-item">
-              <a href="https://twitter.com/dkast" className="nav-link">
-                <Twitter />
-              </a>
-            </li>
-            <li className="nav-item">
-              <a href="https://www.instagram.com/dkast" className="nav-link">
-                <Instagram />
-              </a>
-            </li>
-            <li className="nav-item">
-              <a href="https://github.com/dkast" className="nav-link">
-                <Github />
-              </a>
-            </li>
-          </ul>
-        </div>
+    <div className="navbar navbar-expand-lg">
+      <div className="container">
+        <Link route="index">
+          <a className="navbar-brand mr-auto">
+            <Logo width="32px" height="32px" />
+          </a>
+        </Link>
+        <ul className="navbar-nav">
+          <li className="nav-item">
+            <Link route="about">
+              <a className="nav-link">About</a>
+            </Link>
+          </li>
+        </ul>
       </div>
+      {/* <ul className="nav justify-content-end">
+          <li className="nav-item">
+            <a href="https://twitter.com/dkast" className="nav-link">
+              <Twitter />
+            </a>
+          </li>
+          <li className="nav-item">
+            <a href="https://www.instagram.com/dkast" className="nav-link">
+              <Instagram />
+            </a>
+          </li>
+          <li className="nav-item">
+            <a href="https://github.com/dkast" className="nav-link">
+              <Github />
+            </a>
+          </li>
+        </ul> */}
     </div>
     <style jsx>
       {`
         .nav-item a {
+          font-weight: bold;
           color: #333;
         }
 

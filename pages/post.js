@@ -29,13 +29,9 @@ class Post extends Component {
     return (
       <Layout>
         <Head>
-          <title>
-            {this.props.post.fields.title}
-          </title>
+          <title>{this.props.post.fields.title}</title>
         </Head>
-        <h2>
-          {this.props.post.fields.title}
-        </h2>
+        <h2>{this.props.post.fields.title}</h2>
         <span className="badge badge-light mb-4 post-date">
           {postDate.fromNow()}
         </span>
@@ -53,7 +49,6 @@ class Post extends Component {
             }
 
             :global(.post-body h2, .post-body h3, .post-body h4) {
-              font-family: "Open Sans", sans-serif;
               font-weight: 700;
             }
 

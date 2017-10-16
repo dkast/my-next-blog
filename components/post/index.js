@@ -39,7 +39,6 @@ class PostItem extends Component {
             }
 
             :global(.post-body h2, .post-body h3, .post-body h4) {
-              font-family: "Open Sans", sans-serif;
               font-weight: 700;
             }
 

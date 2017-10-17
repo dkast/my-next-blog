@@ -8,11 +8,16 @@ const Index = props => (
   <Layout>
     <style jsx>
       {`
-        .intro h1 {
+        .intro {
+          margin-bottom: 10rem;
+        }
+
+        h1 {
           font-weight: 400;
         }
 
-        .intro h2 {
+        h2,
+        h3 {
           font-weight: 300;
         }
       `}
@@ -20,10 +25,9 @@ const Index = props => (
     <div className="row">
       <div className="col-12 intro">
         <h1>Hello, I'm Daniel Castillejo.</h1>
-        <h2 className="mb-5">
+        <h2 className="text-muted">
           Software developer, design enthusiast and music lover.
         </h2>
-        <h2 className="mb-4 text-muted">This is my Blog.</h2>
       </div>
     </div>
     {props.posts.map(post => <Post key={post.sys.id} post={post} />)}

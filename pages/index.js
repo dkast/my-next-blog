@@ -29,6 +29,9 @@ const Index = props => (
           Software developer, design enthusiast and music lover.
         </h2>
       </div>
+      <div className="col-12 mb-2">
+        <h3 className="text-muted">This is my Blog.</h3>
+      </div>
     </div>
     {props.posts.map(post => <Post key={post.sys.id} post={post} />)}
   </Layout>

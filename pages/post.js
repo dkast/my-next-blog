@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Layout from "../components/layout";
+import LayoutPost from "../components/layout-post";
 import fetch from "isomorphic-unfetch";
 import ReactMarkdown from "react-markdown";
 import moment from "moment/moment";
@@ -27,7 +27,7 @@ class Post extends Component {
   render() {
     let postDate = moment(this.props.post.sys.createdAt);
     return (
-      <Layout>
+      <LayoutPost>
         <Head>
           <title>{this.props.post.fields.title}</title>
         </Head>
@@ -58,7 +58,7 @@ class Post extends Component {
             }
           `}
         </style>
-      </Layout>
+      </LayoutPost>
     );
   }
 }

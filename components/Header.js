@@ -69,20 +69,24 @@ const Header = ({ title = "Daniel Castillejo" }) => (
         }
       `}
     </style>
-    <div className="navbar navbar-expand-lg">
-      <div className="container">
-        <Link route="index">
-          <a className="navbar-brand mr-auto">
-            <Logo width="32px" height="32px" />
-          </a>
-        </Link>
-        <ul className="navbar-nav">
-          <li className="nav-item">
-            <Link route="about">
-              <a className="nav-link">About</a>
+    <div className="container">
+      <div className="row justify-content-md-center">
+        <div className="col-lg-8">
+          <div className="navbar navbar-expand-lg">
+            <Link route="index">
+              <a className="navbar-brand mr-auto">
+                <Logo width="36px" height="36px" />
+              </a>
             </Link>
-          </li>
-        </ul>
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <Link route="about">
+                  <a className="nav-link">About</a>
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
       {/* <ul className="nav justify-content-end">
           <li className="nav-item">
@@ -104,6 +108,10 @@ const Header = ({ title = "Daniel Castillejo" }) => (
     </div>
     <style jsx>
       {`
+        .navbar {
+          padding: 0.5rem 0;
+        }
+
         .nav-item a {
           font-weight: bold;
           color: #333;

@@ -10,7 +10,7 @@ const LayoutPost = ({ children }) => (
     <div className="row no-gutters">
       <div className="col-12">
         <img
-          src="https://source.unsplash.com/collection/430468/1200x400"
+          src="https://source.unsplash.com/collection/227/1200x300"
           alt="hero"
           className="img-fluid"
         />
@@ -18,7 +18,7 @@ const LayoutPost = ({ children }) => (
     </div>
     <div className="container">
       <div className="row justify-content-md-center mt-4">
-        <div className="col-lg-8 mt-2">{children}</div>
+        <div className="col-lg-8 mt-5">{children}</div>
       </div>
     </div>
     <Footer />

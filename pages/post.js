@@ -49,7 +49,7 @@ class Post extends Component {
             }
 
             :global(.post-body h2, .post-body h3, .post-body h4) {
-              font-weight: 700;
+              font-weight: 600;
             }
 
             .post-date {

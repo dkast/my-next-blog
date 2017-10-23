@@ -8,7 +8,7 @@ export default props => (
   >
     <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
       <g id="random_access">
-        <circle id="Oval" fill="#FF2851" cx="23.5" cy="23.5" r="23.5" />
+        <circle id="Oval" fill="#7C4DFF" cx="23.5" cy="23.5" r="23.5" />
         <g
           id="shuffle"
           transform="translate(8.000000, 13.000000)"

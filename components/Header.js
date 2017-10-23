@@ -33,7 +33,7 @@ const Header = ({ title = "Daniel Castillejo" }) => (
 
         body {
           font-family: "Hind", sans-serif;
-          margin-bottom: 60px;
+          margin-bottom: 76px;
         }
 
         h1,
@@ -41,7 +41,7 @@ const Header = ({ title = "Daniel Castillejo" }) => (
         h3,
         h5,
         h5 {
-          font-weight: 700;
+          font-weight: 600;
         }
 
         /* loading progress bar styles */
@@ -49,7 +49,7 @@ const Header = ({ title = "Daniel Castillejo" }) => (
           pointer-events: none;
         }
         #nprogress .bar {
-          background: #333;
+          background: #651fff;
           position: fixed;
           z-index: 1031;
           top: 0;
@@ -63,7 +63,7 @@ const Header = ({ title = "Daniel Castillejo" }) => (
           right: 0px;
           width: 100px;
           height: 100%;
-          box-shadow: 0 0 10px #333, 0 0 5px #333;
+          box-shadow: 0 0 10px #651fff, 0 0 5px #651fff;
           opacity: 1;
           transform: rotate(3deg) translate(0px, -4px);
         }

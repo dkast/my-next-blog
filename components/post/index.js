@@ -27,7 +27,7 @@ class PostItem extends Component {
             }
 
             a:hover {
-              color: #ff2851;
+              color: #7c4dff;
               text-decoration: none;
             }
 

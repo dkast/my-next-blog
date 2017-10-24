@@ -25,9 +25,9 @@ class Post extends Component {
     };
   }
   render() {
-    let postDate = moment(this.props.post.sys.createdAt);
+    const postDate = moment(this.props.post.sys.createdAt);
     return (
-      <LayoutPost imageUrl={"https://source.unsplash.com/22mlwLRBlj0/1200x300"}>
+      <LayoutPost unsplashID={this.props.post.fields.unsplashID}>
         <Head>
           <title>{this.props.post.fields.title}</title>
         </Head>

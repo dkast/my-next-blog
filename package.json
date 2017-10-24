@@ -10,14 +10,10 @@
     "start": "NODE_ENV=production node server"
   },
   "now": {
-    "alias": "hacknroll",
+    "alias": "dkast",
     "dotenv": true
   },
-  "keywords": [
-    "nextjs",
-    "react",
-    "SSR"
-  ],
+  "keywords": ["nextjs", "react", "SSR"],
   "author": "Daniel Castillejo",
   "license": "ISC",
   "dependencies": {

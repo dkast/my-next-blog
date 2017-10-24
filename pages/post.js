@@ -27,7 +27,7 @@ class Post extends Component {
   render() {
     let postDate = moment(this.props.post.sys.createdAt);
     return (
-      <LayoutPost>
+      <LayoutPost imageUrl={"https://source.unsplash.com/22mlwLRBlj0/1200x300"}>
         <Head>
           <title>{this.props.post.fields.title}</title>
         </Head>

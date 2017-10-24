@@ -57,11 +57,7 @@ const About = props => (
           line-height: 1.6;
         }
 
-        :global(.page-body h1) {
-          font-weight: 300;
-        }
-
-        :global(.page-body h2, .page-body h3, .page-body h4) {
+        :global(.page-body h1, .page-body h2, .page-body h3, .page-body h4) {
           font-weight: 400;
         }
 

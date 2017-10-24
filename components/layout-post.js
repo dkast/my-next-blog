@@ -4,16 +4,12 @@ import Logo from "./logo-ra";
 import Footer from "./footer";
 import { Link } from "../routes";
 
-const LayoutPost = ({ children }) => (
+const LayoutPost = ({ children, imageUrl }) => (
   <div>
     <Header />
     <div className="row no-gutters">
       <div className="col-12">
-        <img
-          src="https://source.unsplash.com/collection/227/1200x300"
-          alt="hero"
-          className="img-fluid"
-        />
+        <img src={imageUrl} alt="hero" className="img-fluid" />
       </div>
     </div>
     <div className="container">

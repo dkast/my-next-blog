@@ -1,5 +1,6 @@
 import Head from "next/head";
 import LayoutPost from "../components/layout-post";
+import TagList from "../components/tag-list";
 import fetch from "isomorphic-unfetch";
 import ReactMarkdown from "react-markdown";
 import moment from "moment/moment";
@@ -26,19 +27,22 @@ class Post extends Component {
   }
   render() {
     const postDate = moment(this.props.post.sys.createdAt);
+    console.log();
     return (
-      <LayoutPost unsplashID={this.props.post.fields.unsplashID}>
+      <LayoutPost unsplashID={this.props.post.fields.unsplashId}>
         <Head>
           <title>{this.props.post.fields.title}</title>
         </Head>
-        <h2>{this.props.post.fields.title}</h2>
-        <span className="badge badge-light mb-4 post-date">
-          {postDate.fromNow()}
-        </span>
-        <ReactMarkdown
-          source={this.props.post.fields.body}
-          className="post-body mb-5"
-        />
+        <div className="post-meta">
+          <h1>{this.props.post.fields.title}</h1>
+          <span className="badge badge-light mb-4 post-date">
+            {postDate.fromNow()}
+          </span>
+        </div>
+        <div className="post-body mb-5">
+          <ReactMarkdown source={this.props.post.fields.body} />
+          <TagList tags={this.props.post.fields.tags} />
+        </div>
         <style jsx>
           {`
             /* use :global to style third-party components */

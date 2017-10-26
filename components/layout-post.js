@@ -2,16 +2,16 @@ import Head from "next/head";
 import Header from "./header";
 import Logo from "./logo-ra";
 import Footer from "./footer";
-import ImageHeader from "./unsplash-img";
+import HeaderImage from "./header-image";
 import { Link } from "../routes";
 
 const LayoutPost = ({ children, unsplashID }) => (
   <div>
     <Header />
-    <ImageHeader unsplashID={unsplashID} />
+    <HeaderImage unsplashID={unsplashID} />
     <div className="container">
       <div className="row justify-content-md-center mt-4">
-        <div className="col-lg-8 mt-5">{children}</div>
+        <div className="col-lg-8 mt-3 mt-md-5">{children}</div>
       </div>
     </div>
     <Footer />

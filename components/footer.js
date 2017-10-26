@@ -5,9 +5,11 @@ export default () => (
     <div className="container">
       <div className="row justify-content-center">
         <div className="col-12 col-lg-4 order-lg-1 order-2">
-          <span className="text-muted">
-            Created by Daniel Castillejo. Built with Next.js.
-          </span>
+          <div className="d-flex justify-content-center justify-content-lg-start">
+            <span className="text-muted">
+              Created by Daniel Castillejo. Built with Next.js.
+            </span>
+          </div>
         </div>
         <div className="col-12 col-lg-4 order-lg-2 order-1">
           <ul className="nav justify-content-center justify-content-lg-end">

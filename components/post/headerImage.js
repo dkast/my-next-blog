@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const HeaderImage = ({ unsplashID }) => {
-  if (!unsplashID) {
+const HeaderImage = ({ unsplashId }) => {
+  if (!unsplashId) {
     return null;
   }
 
-  const imageUrl = `https://source.unsplash.com/${unsplashID}/1200x300`;
+  const imageUrl = `https://source.unsplash.com/${unsplashId}/1200x300`;
   return (
     <div className="row no-gutters mt-md-4">
       <div className="col-12">
@@ -24,7 +24,7 @@ const HeaderImage = ({ unsplashID }) => {
 };
 
 HeaderImage.propTypes = {
-  unsplashID: PropTypes.string
+  unsplashId: PropTypes.string
 };
 
 export default HeaderImage;

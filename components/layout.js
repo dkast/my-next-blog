@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Header from "./header";
-import Logo from "./logo-ra";
 import Footer from "./footer";
 import { Link } from "../routes";
 

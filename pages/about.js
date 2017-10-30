@@ -1,7 +1,7 @@
 import Layout from "../components/layout";
 import { createClient } from "contentful";
 import ReactMarkdown from "react-markdown";
-import ProgresBar from "../components/progressbar";
+import ProgresBar from "../components/progressBar";
 
 const About = props => (
   <Layout>

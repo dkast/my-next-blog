@@ -5,8 +5,7 @@ class TagList extends Component {
     if (!this.props.tags) {
       return null;
     }
-    const tagArr = this.props.tags.split(",");
-    const tagItems = tagArr.map(tag => (
+    const tagItems = this.props.tags.map(tag => (
       <li className="list-inline-item" key={tag}>
         <span className="badge badge-pill badge-secondary">{tag}</span>
         <style jsx>

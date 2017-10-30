@@ -1,6 +1,7 @@
 import Head from "next/head";
-import LayoutPost from "../components/layout-post";
-import TagList from "../components/tag-list";
+import LayoutPost from "../components/post/layoutPost";
+import TagList from "../components/post/tagList";
+import RelatedPosts from "../components/post/relatedPosts";
 import fetch from "isomorphic-unfetch";
 import ReactMarkdown from "react-markdown";
 import moment from "moment/moment";
@@ -16,20 +17,32 @@ class Post extends Component {
       accessToken: process.env.ACCESS_TOKEN
     });
 
-    const res = await client.getEntries({
+    const post = await client.getEntries({
       content_type: "blogPost",
       "fields.slug": slug
     });
 
+    const tags = post.items[0].fields.tags.toString();
+
+    const relatedPosts = await client.getEntries({
+      content_type: "blogPost",
+      select: "fields.title,fields.slug,fields.tags,fields.unsplashId",
+      "fields.tags[in]": tags,
+      "sys.id[ne]": post.items[0].sys.id,
+      order: "-sys.createdAt",
+      limit: 3
+    });
+
     return {
-      post: res.items[0]
+      post: post.items[0],
+      relatedPosts: relatedPosts.items
     };
   }
   render() {
     const postDate = moment(this.props.post.sys.createdAt);
     console.log();
     return (
-      <LayoutPost unsplashID={this.props.post.fields.unsplashId}>
+      <LayoutPost unsplashId={this.props.post.fields.unsplashId}>
         <Head>
           <title>{this.props.post.fields.title}</title>
         </Head>
@@ -42,6 +55,7 @@ class Post extends Component {
         <div className="post-body mb-5">
           <ReactMarkdown source={this.props.post.fields.body} />
           <TagList tags={this.props.post.fields.tags} />
+          <RelatedPosts posts={this.props.relatedPosts} />
         </div>
         <style jsx>
           {`

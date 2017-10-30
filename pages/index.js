@@ -2,7 +2,7 @@ import { createClient } from "contentful";
 import fetch from "isomorphic-unfetch";
 
 import Layout from "../components/layout";
-import Post from "../components/post";
+import PostItem from "../components/post/postItem";
 
 const Index = props => (
   <Layout>
@@ -33,7 +33,7 @@ const Index = props => (
         <h3 className="text-muted">This is my Blog.</h3>
       </div>
     </div>
-    {props.posts.map(post => <Post key={post.sys.id} post={post} />)}
+    {props.posts.map(post => <PostItem key={post.sys.id} post={post} />)}
   </Layout>
 );
 

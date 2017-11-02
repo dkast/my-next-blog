@@ -13,8 +13,8 @@ class PostItem extends Component {
             <h2>{this.props.post.fields.title}</h2>
           </a>
         </Link>
-        <span className="badge badge-light mb-4 post-date">
-          {postDate.fromNow()}
+        <span className="badge badge-light mb-4 meta">
+          {postDate.format("LL")}
         </span>
         <ReactMarkdown
           source={this.props.post.fields.body}
@@ -42,8 +42,8 @@ class PostItem extends Component {
               font-weight: 600;
             }
 
-            .post-date {
-              text-transform: uppercase;
+            .meta {
+              font-size: 0.9rem;
               font-weight: 400;
             }
           `}

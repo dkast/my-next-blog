@@ -13,7 +13,11 @@
     "alias": "dkast",
     "dotenv": true
   },
-  "keywords": ["nextjs", "react", "SSR"],
+  "keywords": [
+    "nextjs",
+    "react",
+    "SSR"
+  ],
   "author": "Daniel Castillejo",
   "license": "ISC",
   "dependencies": {
@@ -28,6 +32,7 @@
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-feather": "^1.0.7",
-    "react-markdown": "^2.5.0"
+    "react-markdown": "^2.5.0",
+    "reading-time": "^1.1.0"
   }
 }

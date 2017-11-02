@@ -1,12 +1,12 @@
+import React, { Component } from "react";
 import Head from "next/head";
+import { createClient } from "contentful";
+import moment from "moment/moment";
+import readingTime from "reading-time";
 import LayoutPost from "../components/post/layoutPost";
 import TagList from "../components/post/tagList";
 import RelatedPosts from "../components/post/relatedPosts";
-import fetch from "isomorphic-unfetch";
 import ReactMarkdown from "react-markdown";
-import moment from "moment/moment";
-import { createClient } from "contentful";
-import React, { Component } from "react";
 
 class Post extends Component {
   static async getInitialProps(context) {
@@ -40,7 +40,8 @@ class Post extends Component {
   }
   render() {
     const postDate = moment(this.props.post.sys.createdAt);
-    console.log();
+    const readingStats = readingTime(this.props.post.fields.body);
+    console.dir(readingStats);
     return (
       <LayoutPost unsplashId={this.props.post.fields.unsplashId}>
         <Head>
@@ -48,8 +49,11 @@ class Post extends Component {
         </Head>
         <div className="post-meta">
           <h1>{this.props.post.fields.title}</h1>
-          <span className="badge badge-light mb-4 post-date">
-            {postDate.fromNow()}
+          <span className="badge badge-light mb-4 meta">
+            {postDate.format("LL")}
+          </span>
+          <span className="badge badge-light mb-4 ml-2 meta">
+            {readingStats.text}
           </span>
         </div>
         <div className="post-body mb-5">
@@ -70,8 +74,8 @@ class Post extends Component {
               font-weight: 600;
             }
 
-            .post-date {
-              text-transform: uppercase;
+            .meta {
+              font-size: 0.9rem;
               font-weight: 400;
             }
           `}

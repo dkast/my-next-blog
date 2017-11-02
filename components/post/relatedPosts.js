@@ -10,9 +10,8 @@ class RelatedPosts extends Component {
       <PostItemCard key={post.sys.id} post={post} />
     ));
     return (
-      <div className="bg-light">
-        <h2>Related Posts</h2>
-        {postItemCards}
+      <div className="my-5">
+        <div className="card-deck">{postItemCards}</div>
       </div>
     );
   }

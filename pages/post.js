@@ -1,10 +1,12 @@
-import Head from "next/head";
-import Layout from "../components/layout";
-import fetch from "isomorphic-unfetch";
-import ReactMarkdown from "react-markdown";
-import moment from "moment/moment";
-import { createClient } from "contentful";
 import React, { Component } from "react";
+import Head from "next/head";
+import { createClient } from "contentful";
+import moment from "moment/moment";
+import readingTime from "reading-time";
+import LayoutPost from "../components/post/layoutPost";
+import TagList from "../components/post/tagList";
+import RelatedPosts from "../components/post/relatedPosts";
+import ReactMarkdown from "react-markdown";
 
 class Post extends Component {
   static async getInitialProps(context) {
@@ -15,34 +17,50 @@ class Post extends Component {
       accessToken: process.env.ACCESS_TOKEN
     });
 
-    const res = await client.getEntries({
+    const post = await client.getEntries({
       content_type: "blogPost",
       "fields.slug": slug
     });
 
+    const tags = post.items[0].fields.tags.toString();
+
+    const relatedPosts = await client.getEntries({
+      content_type: "blogPost",
+      select: "fields.title,fields.slug,fields.tags,fields.unsplashId",
+      "fields.tags[in]": tags,
+      "sys.id[ne]": post.items[0].sys.id,
+      order: "-sys.createdAt",
+      limit: 3
+    });
+
     return {
-      post: res.items[0]
+      post: post.items[0],
+      relatedPosts: relatedPosts.items
     };
   }
   render() {
-    let postDate = moment(this.props.post.sys.createdAt);
+    const postDate = moment(this.props.post.sys.createdAt);
+    const readingStats = readingTime(this.props.post.fields.body);
+    console.dir(readingStats);
     return (
-      <Layout>
+      <LayoutPost unsplashId={this.props.post.fields.unsplashId}>
         <Head>
-          <title>
-            {this.props.post.fields.title}
-          </title>
+          <title>{this.props.post.fields.title}</title>
         </Head>
-        <h2>
-          {this.props.post.fields.title}
-        </h2>
-        <span className="badge badge-light mb-4 post-date">
-          {postDate.fromNow()}
-        </span>
-        <ReactMarkdown
-          source={this.props.post.fields.body}
-          className="post-body mb-5"
-        />
+        <div className="post-meta">
+          <h1>{this.props.post.fields.title}</h1>
+          <span className="badge badge-light mb-4 meta">
+            {postDate.format("LL")}
+          </span>
+          <span className="badge badge-light mb-4 ml-2 meta">
+            {readingStats.text}
+          </span>
+        </div>
+        <div className="post-body mb-5">
+          <ReactMarkdown source={this.props.post.fields.body} />
+          <TagList tags={this.props.post.fields.tags} />
+          <RelatedPosts posts={this.props.relatedPosts} />
+        </div>
         <style jsx>
           {`
             /* use :global to style third-party components */
@@ -53,17 +71,16 @@ class Post extends Component {
             }
 
             :global(.post-body h2, .post-body h3, .post-body h4) {
-              font-family: "Open Sans", sans-serif;
-              font-weight: 700;
+              font-weight: 600;
             }
 
-            .post-date {
-              text-transform: uppercase;
+            .meta {
+              font-size: 0.9rem;
               font-weight: 400;
             }
           `}
         </style>
-      </Layout>
+      </LayoutPost>
     );
   }
 }

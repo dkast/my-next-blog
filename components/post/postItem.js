@@ -13,8 +13,8 @@ class PostItem extends Component {
             <h2>{this.props.post.fields.title}</h2>
           </a>
         </Link>
-        <span className="badge badge-light mb-4 post-date">
-          {postDate.fromNow()}
+        <span className="badge badge-light mb-4 meta">
+          {postDate.format("LL")}
         </span>
         <ReactMarkdown
           source={this.props.post.fields.body}
@@ -27,7 +27,7 @@ class PostItem extends Component {
             }
 
             a:hover {
-              color: #fdd835;
+              color: #7c4dff;
               text-decoration: none;
             }
 
@@ -39,12 +39,11 @@ class PostItem extends Component {
             }
 
             :global(.post-body h2, .post-body h3, .post-body h4) {
-              font-family: "Open Sans", sans-serif;
-              font-weight: 700;
+              font-weight: 600;
             }
 
-            .post-date {
-              text-transform: uppercase;
+            .meta {
+              font-size: 0.9rem;
               font-weight: 400;
             }
           `}

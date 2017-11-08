@@ -2,12 +2,40 @@ import { createClient } from "contentful";
 import fetch from "isomorphic-unfetch";
 
 import Layout from "../components/layout";
-import Post from "../components/post";
+import PostItem from "../components/post/postItem";
 
-const Index = props =>
+const Index = props => (
   <Layout>
-    {props.posts.map(post => <Post key={post.sys.id} post={post} />)}
-  </Layout>;
+    <style jsx>
+      {`
+        .intro {
+          margin-bottom: 10rem;
+        }
+
+        h1 {
+          font-weight: 400;
+        }
+
+        h2,
+        h3 {
+          font-weight: 300;
+        }
+      `}
+    </style>
+    <div className="row">
+      <div className="col-12 intro">
+        <h1>Hello, I'm Daniel Castillejo.</h1>
+        <h2 className="text-muted">
+          Software developer, design enthusiast and music lover.
+        </h2>
+      </div>
+      <div className="col-12 mb-2">
+        <h3 className="text-muted">This is my Blog.</h3>
+      </div>
+    </div>
+    {props.posts.map(post => <PostItem key={post.sys.id} post={post} />)}
+  </Layout>
+);
 
 Index.getInitialProps = async function() {
   const client = createClient({

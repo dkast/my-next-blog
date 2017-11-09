@@ -4,6 +4,7 @@ import Router from "next/router";
 import { Link } from "../routes";
 import { Twitter, Instagram, Github } from "react-feather";
 import Logo from "./logo-svg";
+import Stylesheet from "styles/shards.min.css";
 
 Router.onRouteChangeStart = () => NProgress.start();
 Router.onRouteChangeComplete = () => NProgress.done();

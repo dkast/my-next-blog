@@ -16,7 +16,7 @@ const Header = ({ title = "Daniel Castillejo" }) => (
       <meta charSet="utf-8" />
       <link
         rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
       />
       <link href="/static/shards.css" rel="stylesheet" />
       <link

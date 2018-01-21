@@ -16,8 +16,9 @@ const Header = ({ title = "Daniel Castillejo" }) => (
       <meta charSet="utf-8" />
       <link
         rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
       />
+      <link href="/static/shards.css" rel="stylesheet" />
       <link
         href="https://fonts.googleapis.com/css?family=Hind:300,400,600"
         rel="stylesheet"
@@ -32,7 +33,8 @@ const Header = ({ title = "Daniel Castillejo" }) => (
         }
 
         body {
-          font-family: "Hind", sans-serif;
+          font-family: "Hind", -apple-system, BlinkMacSystemFont, "Segoe UI",
+            Roboto, "Helvetica Neue", Arial, sans-serif;
           margin-bottom: 76px;
         }
 
@@ -41,6 +43,8 @@ const Header = ({ title = "Daniel Castillejo" }) => (
         h3,
         h5,
         h5 {
+          font-family: "Hind", -apple-system, BlinkMacSystemFont, "Segoe UI",
+            Roboto, "Helvetica Neue", Arial, sans-serif;
           font-weight: 600;
         }
 

@@ -22,16 +22,24 @@ class Post extends Component {
       "fields.slug": slug
     });
 
-    const tags = post.items[0].fields.tags.toString();
-
-    const relatedPosts = await client.getEntries({
-      content_type: "blogPost",
-      select: "fields.title,fields.slug,fields.tags,fields.unsplashId",
-      "fields.tags[in]": tags,
-      "sys.id[ne]": post.items[0].sys.id,
-      order: "-sys.createdAt",
-      limit: 3
-    });
+    let tags;
+    let relatedPosts;
+    if (post.items[0].fields.hasOwnProperty(tags)) {
+      tags = post.items[0].fields.tags.toString();
+      relatedPosts = await client.getEntries({
+        content_type: "blogPost",
+        select: "fields.title,fields.slug,fields.tags,fields.unsplashId",
+        "fields.tags[in]": tags,
+        "sys.id[ne]": post.items[0].sys.id,
+        order: "-sys.createdAt",
+        limit: 3
+      });
+    } else {
+      tags = [];
+      relatedPosts = {
+        items: []
+      };
+    }
 
     return {
       post: post.items[0],

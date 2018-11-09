@@ -42,7 +42,6 @@ const About = props => (
           <li>Fullstack Developer</li>
           <li>DevOps</li>
           <li>Project Manager</li>
-          <li>Product Development</li>
           <li>UI & UX</li>
           <li>Cross-platform/Native Developer</li>
         </ul>

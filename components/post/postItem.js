@@ -10,7 +10,7 @@ class PostItem extends Component {
       <div>
         <Link route="post" params={{ slug: this.props.post.fields.slug }}>
           <a>
-            <h2>{this.props.post.fields.title}</h2>
+            <h3>{this.props.post.fields.title}</h3>
           </a>
         </Link>
         <span className="badge badge-light mb-4 meta">

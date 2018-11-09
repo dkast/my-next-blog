@@ -9,7 +9,7 @@ const Index = props => (
     <style jsx>
       {`
         .intro {
-          margin-bottom: 10rem;
+          margin-bottom: 4rem;
         }
 
         h1 {
@@ -24,13 +24,13 @@ const Index = props => (
     </style>
     <div className="row">
       <div className="col-12 intro">
-        <h1>Hello, I'm Daniel Castillejo.</h1>
-        <h2 className="text-muted">
+        <h2>Hello, I'm Daniel Castillejo.</h2>
+        <h3 className="text-muted">
           Software developer, design enthusiast and music lover.
-        </h2>
+        </h3>
       </div>
       <div className="col-12 mb-2">
-        <h3 className="text-muted">This is my Blog.</h3>
+        <h4 className="text-muted">This is my Blog.</h4>
       </div>
     </div>
     {props.posts.map(post => <PostItem key={post.sys.id} post={post} />)}

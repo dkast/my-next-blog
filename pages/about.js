@@ -47,29 +47,16 @@ const About = props => (
         </ul>
       </div>
     </div>
-    <style jsx>
-      {`
-        /* use :global to style third-party components */
-        :global(.page-body) {
-          font-size: 20px;
-          font-weight: 300;
-          line-height: 1.6;
-        }
+    <style jsx>{`
+      h2,
+      h3 {
+        font-weight: 400;
+      }
 
-        :global(.page-body h1, .page-body h2, .page-body h3, .page-body h4) {
-          font-weight: 400;
-        }
-
-        h2,
-        h3 {
-          font-weight: 400;
-        }
-
-        li {
-          margin-bottom: 1rem;
-        }
-      `}
-    </style>
+      li {
+        margin-bottom: 1rem;
+      }
+    `}</style>
   </Layout>
 );
 

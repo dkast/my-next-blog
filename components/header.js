@@ -25,54 +25,78 @@ const Header = ({ title = "Daniel Castillejo" }) => (
       />
       <title>{title}</title>
     </Head>
-    <style jsx global>
-      {`
-        html {
-          position: relative;
-          min-height: 100%;
-        }
+    <style jsx global>{`
+      html {
+        position: relative;
+        min-height: 100%;
+      }
 
-        body {
-          font-family: "Hind", -apple-system, BlinkMacSystemFont, "Segoe UI",
-            Roboto, "Helvetica Neue", Arial, sans-serif;
-          margin-bottom: 76px;
-        }
+      body {
+        font-family: "Hind", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, "Helvetica Neue", Arial, sans-serif;
+        margin-bottom: 76px;
+      }
 
-        h1,
-        h2,
-        h3,
-        h5,
-        h5 {
-          font-family: "Hind", -apple-system, BlinkMacSystemFont, "Segoe UI",
-            Roboto, "Helvetica Neue", Arial, sans-serif;
-          font-weight: 600;
-        }
+      h1,
+      h2,
+      h3,
+      h5,
+      h5 {
+        font-family: "Hind", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-weight: 600;
+      }
 
-        /* loading progress bar styles */
-        #nprogress {
-          pointer-events: none;
-        }
-        #nprogress .bar {
-          background: #651fff;
-          position: fixed;
-          z-index: 1031;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 2px;
-        }
-        #nprogress .peg {
-          display: block;
-          position: absolute;
-          right: 0px;
-          width: 100px;
-          height: 100%;
-          box-shadow: 0 0 10px #651fff, 0 0 5px #651fff;
-          opacity: 1;
-          transform: rotate(3deg) translate(0px, -4px);
-        }
-      `}
-    </style>
+      /* loading progress bar styles */
+      #nprogress {
+        pointer-events: none;
+      }
+      #nprogress .bar {
+        background: #651fff;
+        position: fixed;
+        z-index: 1031;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+      }
+      #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #651fff, 0 0 5px #651fff;
+        opacity: 1;
+        transform: rotate(3deg) translate(0px, -4px);
+      }
+
+      /* use :global to style third-party components */
+      .page-body {
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 1.6;
+      }
+
+      .page-body h1,
+      .page-body h2,
+      .page-body h3,
+      .page-body h4 {
+        font-weight: 400;
+      }
+
+      .post-body {
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 1.6;
+      }
+
+      .post-body h2,
+      .post-body h3,
+      .post-body h4 {
+        font-weight: 600;
+      }
+    `}</style>
     <div className="container">
       <div className="row justify-content-md-center">
         <div className="col-lg-8">
@@ -92,40 +116,21 @@ const Header = ({ title = "Daniel Castillejo" }) => (
           </div>
         </div>
       </div>
-      {/* <ul className="nav justify-content-end">
-          <li className="nav-item">
-            <a href="https://twitter.com/dkast" className="nav-link">
-              <Twitter />
-            </a>
-          </li>
-          <li className="nav-item">
-            <a href="https://www.instagram.com/dkast" className="nav-link">
-              <Instagram />
-            </a>
-          </li>
-          <li className="nav-item">
-            <a href="https://github.com/dkast" className="nav-link">
-              <Github />
-            </a>
-          </li>
-        </ul> */}
     </div>
-    <style jsx>
-      {`
-        .navbar {
-          padding: 0.5rem 0;
-        }
+    <style jsx>{`
+      .navbar {
+        padding: 0.5rem 0;
+      }
 
-        .nav-item a {
-          font-weight: bold;
-          color: #333;
-        }
+      .nav-item a {
+        font-weight: bold;
+        color: #333;
+      }
 
-        .nav-item a:hover {
-          color: #555;
-        }
-      `}
-    </style>
+      .nav-item a:hover {
+        color: #555;
+      }
+    `}</style>
   </div>
 );
 

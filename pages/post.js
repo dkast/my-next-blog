@@ -69,25 +69,12 @@ class Post extends Component {
           <TagList tags={this.props.post.fields.tags} />
           <RelatedPosts posts={this.props.relatedPosts} />
         </div>
-        <style jsx>
-          {`
-            /* use :global to style third-party components */
-            :global(.post-body) {
-              font-size: 20px;
-              font-weight: 300;
-              line-height: 1.6;
-            }
-
-            :global(.post-body h2, .post-body h3, .post-body h4) {
-              font-weight: 600;
-            }
-
-            .meta {
-              font-size: 0.9rem;
-              font-weight: 400;
-            }
-          `}
-        </style>
+        <style jsx>{`
+          .meta {
+            font-size: 0.9rem;
+            font-weight: 400;
+          }
+        `}</style>
       </LayoutPost>
     );
   }

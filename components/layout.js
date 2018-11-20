@@ -12,21 +12,19 @@ const Layout = ({ children }) => (
       </div>
     </div>
     <Footer />
-    <style jsx>
-      {`
-        .site-title h3 {
-          font-family: "Works Sans", sans-serif;
-          text-transform: uppercase;
-          letter-spacing: 4px;
-        }
+    <style jsx>{`
+      .site-title h3 {
+        font-family: "Works Sans", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+      }
 
-        a,
-        a:hover {
-          color: #333;
-          text-decoration: none;
-        }
-      `}
-    </style>
+      a,
+      a:hover {
+        color: #333;
+        text-decoration: none;
+      }
+    `}</style>
   </div>
 );
 

@@ -8,13 +8,11 @@ class TagList extends Component {
     const tagItems = this.props.tags.map(tag => (
       <li className="list-inline-item" key={tag}>
         <span className="badge badge-pill badge-secondary">{tag}</span>
-        <style jsx>
-          {`
-            .badge {
-              font-weight: 300;
-            }
-          `}
-        </style>
+        <style jsx>{`
+          .badge {
+            font-weight: 300;
+          }
+        `}</style>
       </li>
     ));
     return (

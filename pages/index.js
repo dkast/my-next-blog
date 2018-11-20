@@ -6,22 +6,20 @@ import PostItem from "../components/post/postItem";
 
 const Index = props => (
   <Layout>
-    <style jsx>
-      {`
-        .intro {
-          margin-bottom: 4rem;
-        }
+    <style jsx>{`
+      .intro {
+        margin-bottom: 4rem;
+      }
 
-        h1 {
-          font-weight: 400;
-        }
+      h1 {
+        font-weight: 400;
+      }
 
-        h2,
-        h3 {
-          font-weight: 300;
-        }
-      `}
-    </style>
+      h2,
+      h3 {
+        font-weight: 300;
+      }
+    `}</style>
     <div className="row">
       <div className="col-12 intro">
         <h2>Hello, I'm Daniel Castillejo.</h2>
@@ -33,7 +31,9 @@ const Index = props => (
         <h4 className="text-muted">This is my Blog.</h4>
       </div>
     </div>
-    {props.posts.map(post => <PostItem key={post.sys.id} post={post} />)}
+    {props.posts.map(post => (
+      <PostItem key={post.sys.id} post={post} />
+    ))}
   </Layout>
 );
 

@@ -1,6 +1,6 @@
-import { Twitter, Instagram, Github } from "react-feather";
+import { Twitter, Instagram, GitHub } from "react-feather";
 
-export default () => (
+const Footer = () => (
   <footer className="footer">
     <div className="container">
       <div className="row justify-content-center">
@@ -25,33 +25,33 @@ export default () => (
             </li>
             <li className="nav-item">
               <a href="https://github.com/dkast" className="nav-link">
-                <Github />
+                <GitHub />
               </a>
             </li>
           </ul>
         </div>
       </div>
     </div>
-    <style jsx>
-      {`
-        .footer {
-          position: absolute;
-          width: 100%;
-          height: 76px;
-          line-height: 76px;
-          bottom: 0;
-          font-size: 14px;
-        }
+    <style jsx>{`
+      .footer {
+        position: absolute;
+        width: 100%;
+        height: 76px;
+        line-height: 76px;
+        bottom: 0;
+        font-size: 14px;
+      }
 
-        .nav-item a {
-          font-weight: bold;
-          color: #868e96;
-        }
+      .nav-item a {
+        font-weight: bold;
+        color: #868e96;
+      }
 
-        .nav-item a:hover {
-          color: #7c4dff;
-        }
-      `}
-    </style>
+      .nav-item a:hover {
+        color: #7c4dff;
+      }
+    `}</style>
   </footer>
 );
+
+export default Footer;

@@ -20,34 +20,20 @@ class PostItem extends Component {
           source={this.props.post.fields.body}
           className="post-body mb-5"
         />
-        <style jsx>
-          {`
-            a {
-              color: #333;
-            }
+        <style jsx>{`
+          a {
+            color: #333;
+          }
 
-            a:hover {
-              color: #7c4dff;
-              text-decoration: none;
-            }
-
-            /* use :global to style third-party components */
-            :global(.post-body) {
-              font-size: 20px;
-              font-weight: 300;
-              line-height: 1.6;
-            }
-
-            :global(.post-body h2, .post-body h3, .post-body h4) {
-              font-weight: 600;
-            }
-
-            .meta {
-              font-size: 0.9rem;
-              font-weight: 400;
-            }
-          `}
-        </style>
+          a:hover {
+            color: #7c4dff;
+            text-decoration: none;
+          }
+          .meta {
+            font-size: 0.9rem;
+            font-weight: 400;
+          }
+        `}</style>
       </div>
     );
   }

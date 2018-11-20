@@ -9,8 +9,9 @@ class PostItemCard extends Component {
     if (this.props.post.fields.unsplashId) {
       imageTop = (
         <img
-          src={`https://source.unsplash.com/${this.props.post.fields
-            .unsplashId}/400x200`}
+          src={`https://source.unsplash.com/${
+            this.props.post.fields.unsplashId
+          }/400x200`}
           className="card-img-top"
         />
       );
@@ -33,26 +34,24 @@ class PostItemCard extends Component {
             </small>
           </div>
         </div>
-        <style jsx>
-          {`
-            a {
-              color: #333;
-            }
+        <style jsx>{`
+          a {
+            color: #333;
+          }
 
-            a:hover {
-              color: #7c4dff;
-              text-decoration: none;
-            }
+          a:hover {
+            color: #7c4dff;
+            text-decoration: none;
+          }
 
-            h6 {
-              font-weight: 300;
-            }
+          h6 {
+            font-weight: 300;
+          }
 
-            .card {
-              max-width: 25rem;
-            }
-          `}
-        </style>
+          .card {
+            max-width: 25rem;
+          }
+        `}</style>
       </div>
     );
   }

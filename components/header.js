@@ -2,7 +2,6 @@ import Head from "next/head";
 import NProgress from "nprogress";
 import Router from "next/router";
 import { Link } from "../routes";
-import { Twitter, Instagram, Github } from "react-feather";
 import Logo from "./logo-svg";
 
 Router.onRouteChangeStart = () => NProgress.start();

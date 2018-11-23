@@ -1,7 +1,5 @@
-import Head from "next/head";
 import Header from "./header";
 import Footer from "./footer";
-import { Link } from "../routes";
 
 const Layout = ({ children }) => (
   <div>

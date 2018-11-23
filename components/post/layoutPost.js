@@ -1,8 +1,6 @@
-import Head from "next/head";
 import Header from "../header";
 import Footer from "../footer";
 import HeaderImage from "./headerImage";
-import { Link } from "../../routes";
 
 const LayoutPost = ({ children, unsplashId }) => (
   <div>
